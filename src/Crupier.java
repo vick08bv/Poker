@@ -438,7 +438,7 @@ public class Crupier{
          * que cada jugador juegue.
          */
         int turno = primeroEnJugar;
-        
+
         /*
          *Decisión que toma cada jugador.
          * 1 para apostar y 0 para retirarse.
@@ -451,7 +451,7 @@ public class Crupier{
          * activos.
          */
         int limiteJugadas = posicionesActivas.size();
-        
+
         for(int numeroDecisiones = 0; 
         numeroDecisiones < limiteJugadas; 
         numeroDecisiones++){
@@ -461,13 +461,23 @@ public class Crupier{
             
             //Si el jugador está activo, juega.
             
-            if(posicionesActivas.contains(jugadores.get(turno).numeroJugador)){
+            //if(posicionesActivas.contains(jugadores.get(turno).numeroJugador)){
+            if(posicionesActivas.contains(turno)){    
+                try {
+                    Thread.sleep(800);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
                 
                 //El jugador decide que hacer y juega.
                 decision = jugadores.get(turno).jugar(
                 ronda, apuestaMinima, posicionesActivas.size());
                 
-                System.out.printf("\nDinero en bote: %d\n", this.dineroEnBote);
+                try {
+                    Thread.sleep(800);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
                 
                 //Si el jugador se retira, se elimina de las posiciones activas.
                 if(decision == 0){
@@ -500,12 +510,17 @@ public class Crupier{
                     }
                 
                 }
-            
-                //El turno se le da al siguiente jugador activo.
-                turno = posicionesActivas.get((posicion+1) % posicionesActivas.size());
-                //turno = (turno+1)%jugadores.size();
                 
+                                
+                System.out.printf("\nDinero en el bote: %d.\n", this.dineroEnBote);
+                
+            } else {
+                numeroDecisiones--;
             }
+            
+            
+            //El turno se le da al siguiente jugador activo.
+            turno = posicionesActivas.get((posicion+1) % posicionesActivas.size());
             
         }
         
@@ -552,6 +567,8 @@ public class Crupier{
                  * par de cartas, lo miran.
                  */
                 
+                System.out.print("\nEmpieza la mano.\n");
+                
                 for(Jugador jugador: jugadores){
                     
                     jugador.getParCartas().getPuntaje();
@@ -559,6 +576,12 @@ public class Crupier{
                 }
 
                 //Se desarrolla la ronda preflop.
+                
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
                 
                 this.desarrollarRonda(
                 apuestaMinima, ronda,
@@ -585,6 +608,12 @@ public class Crupier{
                     
                     jugador.elegirMejorMano();
                     
+                }
+                
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
                 }
                 
                 //Se desarrolla el juego post flop.
@@ -620,6 +649,12 @@ public class Crupier{
                     
                 }
                 
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
+                
                 //Se desarrolla la tercera ronda de apuestas.
                 
                 this.desarrollarRonda(
@@ -649,6 +684,12 @@ public class Crupier{
                 }
                 
                 //Se desarrolla la última ronda de apuestas.
+                
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
                 
                 this.desarrollarRonda(
                 limiteApuesta, ronda, 

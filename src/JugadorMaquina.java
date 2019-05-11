@@ -48,7 +48,32 @@ public class JugadorMaquina extends Jugador{
         if((this.dinero == 0)||
         (numeroJugadoresActivos == 1)){
             
-            return this.apostar();
+            if(numeroJugadoresActivos == 1){
+            
+                System.out.printf("\n%s se ha quedado solo "
+                + "en la mano.\nVa a ganar esta vez.\n", this.apodo);
+                
+                try {
+                    Thread.sleep(300);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
+            
+            } else {
+                
+                System.out.printf("\n%s se ha quedado sin dinero.\n"
+                + "Espera tener la mejor mano y no quedar eliminado ", 
+                this.apodo);
+
+                try {
+                    Thread.sleep(300);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
+                
+            }
+            
+            return 1;
             
         }
         
@@ -62,6 +87,7 @@ public class JugadorMaquina extends Jugador{
         long puntajeMaximoPosible = 0;
         int cifrasPuntaje = 0;
         int cifrasMaximo = 0;
+        int decision = -1;
         
         double estimulo = 0;
         double estimuloPuntaje = 0;
@@ -145,24 +171,26 @@ public class JugadorMaquina extends Jugador{
          * Estimulo azaroso que depende del tipo de jugador (-10,10)
          */ 
         estimulo += (Math.random()-Math.random())*this.getTipoJugador();
-            
-        System.out.println(estimulo);
         
         /* 
          * Si el estimulo que recibe el jugador no supera el 
          * umbral de 25, se va a retirar.
          */
         
-        if(estimulo < 20 ){
+        if(estimulo < 15 ){
 
-            return this.retirarse();
+            decision = this.retirarse();
 
         } else {
 
-            return this.apostar();
+            decision =  this.apostar();
             
         }
+ 
+        System.out.printf("\nEstímulo: %s\n",estimulo);
         
+        return decision;
+
     }
     
     

@@ -117,8 +117,8 @@ public class Juego{
         this.ganadorDeMano = -1;
 
         //Se crea al jugador humano.
-        jugadores.add(
-        new JugadorHumano(Juego.apodos.get(0), 0, 0, dineroInicial));
+        //jugadores.add(
+        //new JugadorHumano(Juego.apodos.get(0), 0, 0, dineroInicial));
                 
         for(int i = 1; i < numeroJugadores; i++){
 
@@ -220,7 +220,7 @@ public class Juego{
         ArrayList<Jugador> jugadoresOriginales = new ArrayList<>(20);
         
         //Jugadores activos.
-        ArrayList<Integer> jugadoresActivos = new ArrayList<>(22);
+        ArrayList<Integer> posicionesActivas = new ArrayList<>(22);
         
         //Posiciones desocupadas.
         ArrayList<Integer> jugadoresEliminados = new ArrayList<>(5);
@@ -232,21 +232,56 @@ public class Juego{
              *todos están activos.
              */
             jugadoresOriginales.add(jugador);
-            jugadoresActivos.add(jugador.numeroJugador);
+            
+        }
+        
+        /*
+         * Se añaden las posiciones activas de acuerdo
+         * a los turnos de juego.
+         */
+        
+        for(int i = 0; i < this.jugadores.size(); i++){
+            
+            posicionesActivas.add(
+            jugadores.get(
+            (this.crupier.posicionBoton+1+i) % jugadores.size()
+            ).numeroJugador);
             
         }
         
         /*
          * El crupier cobra la cuota.
          */
+        
         this.crupier.fijarCuota(this.jugadores, this.apuestaMinima);
         
-        System.out.print("\nEl Crupier reparte las cartas\n");
+        System.out.printf("\nLos jugadores pondrán %d en el bote.\n",
+        this.apuestaMinima);
+        
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e){
+            System.out.println("Ocurrió un error");
+        }
+        
+        System.out.print("\nEl Crupier repartirá las cartas.\n");
         
         /*
          * Reparto de cartas.
          */
-        this.crupier.repartirCartas(jugadores);
+        this.crupier.repartirCartas(this.jugadores);
+        
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e){
+            System.out.println("Ocurrió un error");
+        }
+        
+        for(Jugador jugador: this.jugadores){
+            if(jugador.getTipoJugador() == 0){
+                System.out.print(jugador.toString());
+            }   
+        }
         
         /*
          * Desarrollo de cada una de las rondas
@@ -256,18 +291,36 @@ public class Juego{
                    
             this.crupier.desarrollarMano(
             this.apuestaMinima, this.limiteApuesta, ronda, 
-            this.jugadores, jugadoresActivos
+            this.jugadores, posicionesActivas
             );
+            
+            try {
+                Thread.sleep(1500);
+            } catch (Exception e){
+                System.out.println("Ocurrió un error");
+            }
             
         }
         
          //Determinación del jugador ganador.
         
-        this.determinarGanador(jugadoresActivos);
+        this.determinarGanador(posicionesActivas);
+        
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e){
+            System.out.println("Ocurrió un error");
+        }
         
         System.out.printf("\nEl ganador de la mano es: %s %s",this.jugadores.get(this.ganadorDeMano), 
         this.jugadores.get(this.ganadorDeMano).getMejorMano());
         
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e){
+            System.out.println("Ocurrió un error");
+        }
+  
         //Pago del dinero en el bote al ganador.
         this.pagarApuesta();
         
@@ -338,7 +391,7 @@ public class Juego{
      */
     public static void main(String[] args){
         
-        int numeroJugadores = 22;
+        int numeroJugadores = 10;
         int dineroInicial = 100;
         int apuestaMinima = 10;
         int limiteApuesta = 20;
@@ -349,32 +402,58 @@ public class Juego{
         apuestaMinima, limiteApuesta);
         
         //Contador de manos.
-        int mano = 0;
+        int mano = 1;
         
         while(true){
             
             //Se juegan manos hasta que el jugador gane o pierda.
-            if(juego.terminarJuego() != 0){
+            if(juego.terminarJuego() == 1){
                 break;
             }
             
-            System.out.printf("\nMano número: %d\n", mano);
+            System.out.printf("\n\n%s\n\n", "*******************");
+            
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e){
+                System.out.println("Ocurrió un error");
+            }
+            
+            System.out.printf("\n  Mano número: %d\n", mano);
+            
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e){
+                System.out.println("Ocurrió un error");
+            }
         
             //Se juega la mano actual.
             juego.jugarMano();
+            
+            try {
+            Thread.sleep(2000);
+            } catch (Exception e){
+            System.out.println("Ocurrió un error");
+            }
             
             mano++;
             
         }
         
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e){
+            System.out.println("Ocurrió un error");
+        }
+
         //Termino del juego
         if (juego.terminarJuego() == -1){
             
-            System.out.println("Perdiste");
+            System.out.println("\nPerdiste\n");
             
         } else {
             
-            System.out.println("Felicidades ¡ganaste!");
+            System.out.println("\nFelicidades ¡ganaste!\n");
             
         }
         

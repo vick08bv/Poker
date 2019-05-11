@@ -1,8 +1,17 @@
+import java.util.Scanner;
 /**
  * Jugador controlado por el usuario.
  */
 public class JugadorHumano extends Jugador{
         
+    static Scanner lector;
+    
+    static {
+        
+        lector = new Scanner(System.in);
+        
+    }
+    
     
     /**
      * Constructor.
@@ -30,7 +39,7 @@ public class JugadorHumano extends Jugador{
     @Override
     public int jugar(int ronda, int apuesta, int numeroJugadoresActivos){
         
-        int decision  = 0;
+        String decision  = "";
         
         /*
          * Si el usuario se queda sin dinero en medio de 
@@ -44,6 +53,31 @@ public class JugadorHumano extends Jugador{
         if((this.dinero == 0)||
         (numeroJugadoresActivos == 1)){
             
+            if(numeroJugadoresActivos == 1){
+            
+                System.out.print("\nTus rivales se han retirado "
+                + "de la mano, vas a ganarla.\n");
+                
+                try {
+                    Thread.sleep(300);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
+            
+            } else {
+                
+                System.out.println("\nTe has quedado sin dinero "
+                + "pero aún puedes ganar la mano y permanecer "
+                + "en el juego, espera el resultado");
+
+                try {
+                    Thread.sleep(300);
+                } catch (Exception e){
+                    System.out.println("Ocurrió un error");
+                }
+                
+            }
+            
             return this.apostar();
             
         } else {
@@ -51,12 +85,14 @@ public class JugadorHumano extends Jugador{
             /*
              * El jugador toma la opción que desee.
              */
-        
-            System.out.printf("\nRonda: %d\n", ronda);
-            System.out.printf("\nTu dinero: %d\n", this.dinero);
-            System.out.printf("\nTienes que apostar:  %d    \n ", apuesta);
 
-            if(Math.random() > 0.5){
+            System.out.print(this.toString());
+            System.out.printf("\nJuega. Presiona enter para apostar. "
+            + "Ingresa cualquier indicación para retirarte.\n");
+            
+            decision = (String) JugadorHumano.lector.nextLine();
+
+            if(decision.equals("")){
                 
                 return this.apostar();
                 
@@ -85,7 +121,9 @@ public class JugadorHumano extends Jugador{
         cadena += 
         String.format("\nTienes %d de dinero\n", this.dinero);
         
-        cadena += this.getParCartas().toString();
+        cadena += 
+        String.format("\nTus cartas son: %s\n",
+        this.getParCartas().toString());
                
         return cadena;
         
