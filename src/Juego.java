@@ -370,7 +370,7 @@ public class Juego{
         //Termino del juego
         if (juego.terminarJuego() == -1){
             
-            System.out.println("El usuario perdió");
+            System.out.println("Perdiste");
             
         } else {
             
