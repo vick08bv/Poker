@@ -312,6 +312,10 @@ public class Juego{
             System.out.println("Ocurrió un error");
         }
         
+          
+        //Pago del dinero en el bote al ganador.
+        this.pagarApuesta();
+        
         System.out.printf("\nEl ganador de la mano es: %s %s",this.jugadores.get(this.ganadorDeMano), 
         this.jugadores.get(this.ganadorDeMano).getMejorMano());
         
@@ -320,9 +324,6 @@ public class Juego{
         } catch (Exception e){
             System.out.println("Ocurrió un error");
         }
-  
-        //Pago del dinero en el bote al ganador.
-        this.pagarApuesta();
         
         //Actualización de los jugadores activos.
         this.jugadores = this.crupier.declararJugadoresActivos(this.jugadores);
