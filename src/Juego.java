@@ -117,8 +117,8 @@ public class Juego{
         this.ganadorDeMano = -1;
 
         //Se crea al jugador humano.
-        //jugadores.add(
-        //new JugadorHumano(Juego.apodos.get(0), 0, 0, dineroInicial));
+        jugadores.add(
+        new JugadorHumano(Juego.apodos.get(0), 0, 0, dineroInicial));
                 
         for(int i = 1; i < numeroJugadores; i++){
 
