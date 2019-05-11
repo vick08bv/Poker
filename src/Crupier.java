@@ -32,12 +32,12 @@ public class Crupier{
     /**
      * Cartas en la tercera ronda de apuestas.
      */
-    public CartasComunales turn;
+    private CartasComunales turn;
     
     /**
      * Cartas en la cuarta ronda de apuestas.
      */
-    public CartasComunales river;
+    private CartasComunales river;
     
     
     /**
