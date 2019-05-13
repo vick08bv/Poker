@@ -62,7 +62,7 @@ public class JugadorMaquina extends Jugador{
             } else {
                 
                 System.out.printf("\n%s se ha quedado sin dinero.\n"
-                + "Espera tener la mejor mano y no quedar eliminado ", 
+                + "Espera tener la mejor mano y no quedar eliminado.\n", 
                 this.apodo);
 
                 try {
@@ -186,8 +186,6 @@ public class JugadorMaquina extends Jugador{
             decision =  this.apostar();
             
         }
- 
-        System.out.printf("\nEstímulo: %s\n",estimulo);
         
         return decision;
 

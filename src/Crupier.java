@@ -113,7 +113,7 @@ public class Crupier{
                 posicionesLibres.add(jugador.numeroJugador);
                 
                 System.out.printf("\n%s se ha quedado sin dinero, "
-                + "queda eliminado\n", jugador.apodo);
+                + "queda eliminado.\n", jugador.apodo);
 
             }
             

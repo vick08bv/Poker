@@ -56,7 +56,7 @@ public class JugadorHumano extends Jugador{
             if(numeroJugadoresActivos == 1){
             
                 System.out.print("\nTus rivales se han retirado "
-                + "de la mano, vas a ganarla.\n");
+                + "de la mano. \nVas a ganarla.\n");
                 
                 try {
                     Thread.sleep(300);
@@ -66,9 +66,9 @@ public class JugadorHumano extends Jugador{
             
             } else {
                 
-                System.out.println("\nTe has quedado sin dinero "
-                + "pero aún puedes ganar la mano y permanecer "
-                + "en el juego, espera el resultado");
+                System.out.println("\nTe has quedado sin dinero\n"
+                + "pero aún puedes ganar la mano\ny permanecer "
+                + "en el juego, \nespera el resultado");
 
                 try {
                     Thread.sleep(300);
@@ -87,12 +87,19 @@ public class JugadorHumano extends Jugador{
              */
 
             System.out.print(this.toString());
-            System.out.printf("\nJuega. Presiona enter para apostar. "
-            + "Ingresa cualquier indicación para retirarte.\n");
+            System.out.printf("\nJuega. Presiona enter para apostar.\n");
+            System.out.printf("\nIngresa cualquier indicación para retirarte.\n");
+             System.out.printf("\nIngresa As para abandonar.\n");
             
             decision = (String) JugadorHumano.lector.nextLine();
 
-            if(decision.equals("")){
+            if(decision.equals("As")){
+                
+                System.exit(0);
+                
+                return 1;
+                
+            } else if (decision.equals("")){
                 
                 return this.apostar();
                 

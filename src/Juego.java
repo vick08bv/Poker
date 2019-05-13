@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 /**
  * Juego de póker texas hold'em con limite de apuestas.
@@ -84,6 +85,7 @@ public class Juego{
     
     /**
      * Constructor del juego
+     * @param apodoJugador Apodo del usuario en el juego.
      * @param numeroJugadores Cantidad de jugadores que inician la partida.
      * @param dineroInicial Dinero inicial que tendrá cada jugador.
      * @param apuestaMinima Apuesta durante las primeras 
@@ -91,8 +93,8 @@ public class Juego{
      * @param limiteApuesta Apuesta durante las últimas dos
      * rondas de cada mano.
      */
-    public Juego(int numeroJugadores, int dineroInicial, 
-    int apuestaMinima, int limiteApuesta){
+    public Juego(String apodoJugador, int numeroJugadores, 
+    int dineroInicial, int apuestaMinima, int limiteApuesta){
 
         /*
          *El juego se inicia con 2 y hasta con 22, 
@@ -118,7 +120,7 @@ public class Juego{
 
         //Se crea al jugador humano.
         jugadores.add(
-        new JugadorHumano(Juego.apodos.get(0), 0, 0, dineroInicial));
+        new JugadorHumano(apodoJugador, 0, 0, dineroInicial));
                 
         for(int i = 1; i < numeroJugadores; i++){
 
@@ -264,6 +266,26 @@ public class Juego{
             System.out.println("Ocurrió un error");
         }
         
+        System.out.printf("\nLos jugadores en la mano son:\n");
+        
+        for(int posicion: posicionesActivas){
+            
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e){
+                System.out.println("Ocurrió un error");
+            }
+            
+            System.out.print(jugadores.get(posicion));
+            
+        }
+        
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e){
+            System.out.println("Ocurrió un error");
+        }
+        
         System.out.print("\nEl Crupier repartirá las cartas.\n");
         
         /*
@@ -316,7 +338,8 @@ public class Juego{
         //Pago del dinero en el bote al ganador.
         this.pagarApuesta();
         
-        System.out.printf("\nEl ganador de la mano es: %s %s",this.jugadores.get(this.ganadorDeMano), 
+        System.out.printf("\nEl ganador de la mano es: %s %s",
+        this.jugadores.get(this.ganadorDeMano), 
         this.jugadores.get(this.ganadorDeMano).getMejorMano());
         
         try {
@@ -392,15 +415,201 @@ public class Juego{
      */
     public static void main(String[] args){
         
-        int numeroJugadores = 10;
-        int dineroInicial = 100;
-        int apuestaMinima = 10;
-        int limiteApuesta = 20;
+        Scanner scaner = new Scanner(System.in);
+        
+        String apodoJugador = "";
+        String numeroJugadores = "2";
+        String dineroInicial = "";
+        String apuestaMinima = "";
+        String limiteApuesta = "";
         int ganador = -1;
         
+        try {
+                Thread.sleep(2000);
+            } catch (Exception e){
+                System.out.println("Ocurrió un error");
+            }
+        
+        System.out.printf("\n   Juego de Póker\n "
+                + "\n   Texas Hold'em.\n"
+                + "\n     Bienvenido\n");
+        
+        try {
+                Thread.sleep(2000);
+            } catch (Exception e){
+                System.out.println("Ocurrió un error");
+            }
+        
+        System.out.printf("\nIngresa tu apodo de jugador:\n");
+        
+        apodoJugador = (String) scaner.nextLine();
+        
+        
+        System.out.printf("\nIngresa el número de jugadores:\n");
+
+        numeroJugadores = (String) scaner.nextLine();
+        
+        while(true){
+        
+            while(true){
+
+                try {
+                    Integer.parseInt(numeroJugadores);
+                        break;
+                } catch (NumberFormatException excepcion) {
+                    
+                    System.out.printf("\nDebes ingresar un número del 2 al 22.\n");
+                    
+                    numeroJugadores = (String) scaner.nextLine();
+                    
+                }
+                
+            }
+            
+                            
+            if ((Integer.parseInt(numeroJugadores) < 2) ||  
+                (Integer.parseInt(numeroJugadores) > 22)){ 
+                
+                System.out.printf("\nDebes ingresar un número del 2 al 22.\n");
+                
+                numeroJugadores = (String) scaner.nextLine();
+
+            }   else {
+ 
+                break;
+                
+            }
+        
+        }
+
+        
+        System.out.printf("\nIngresa el dinero inicial de los jugadores:\n");
+
+        dineroInicial = (String) scaner.nextLine();
+        
+        while(true){
+        
+            while(true){
+
+                try {
+                    Integer.parseInt(dineroInicial);
+                        break;
+                } catch (NumberFormatException excepcion) {
+                    
+                    System.out.printf("\nDebes ingresar un número del 10 al 1 000 000.\n");
+
+                    dineroInicial = (String) scaner.nextLine();
+                    
+                }
+                
+            }
+            
+                            
+            if ((Integer.parseInt(dineroInicial) < 10) ||  
+                (Integer.parseInt(dineroInicial) > 1000000)){ 
+                 
+                    System.out.printf("\nDebes ingresar un número del 10 al 1 000 000.\n");
+
+                    dineroInicial = (String) scaner.nextLine();
+
+            }   else {
+ 
+                break;
+                
+            }
+        
+        }
+        
+        
+        System.out.printf("\nIngresa la apuesta mínima de los jugadores:\n");
+
+        apuestaMinima = (String) scaner.nextLine();
+        
+        while(true){
+        
+            while(true){
+
+                try {
+                    Integer.parseInt(apuestaMinima);
+                        break;
+                } catch (NumberFormatException excepcion) {
+                    
+                    System.out.printf("\nDebes ingresar un número del 1 al %s:\n", 
+                    Integer.parseInt(dineroInicial)-2);
+                    
+                    apuestaMinima = (String) scaner.nextLine();
+                    
+                }
+                
+            }
+            
+                            
+            if ((Integer.parseInt(apuestaMinima) < 1) ||  
+                (Integer.parseInt(apuestaMinima) >
+                 Integer.parseInt(dineroInicial) -2 )){ 
+                                    
+                    System.out.printf("\nDebes ingresar un número del 1 al %s:\n", 
+                    Integer.parseInt(dineroInicial)-2);
+                    
+                    apuestaMinima = (String) scaner.nextLine();
+
+            }   else {
+ 
+                break;
+                
+            }
+        
+        }
+        
+        
+        System.out.printf("\nIngresa la apuesta grande de los jugadores:\n");
+
+        limiteApuesta = (String) scaner.nextLine();
+        
+        while(true){
+        
+            while(true){
+
+                try {
+                    Integer.parseInt(limiteApuesta);
+                        break;
+                } catch (NumberFormatException excepcion) {
+                    
+                    System.out.printf("\nDebes ingresar un número del %s al %s:\n", 
+                    Integer.parseInt(apuestaMinima)+1,Integer.parseInt(dineroInicial)-1);
+   
+                    limiteApuesta = (String) scaner.nextLine();
+
+                }
+                
+            }
+            
+                            
+            if ((Integer.parseInt(limiteApuesta) < 
+                  Integer.parseInt(apuestaMinima)+1) ||  
+                (Integer.parseInt(apuestaMinima) > 
+                 Integer.parseInt(dineroInicial)-1 )){ 
+                 
+                    System.out.printf("\nDebes ingresar un número del %s al %s:\n", 
+                    Integer.parseInt(apuestaMinima)+1,Integer.parseInt(dineroInicial)-1);
+   
+                    limiteApuesta = (String) scaner.nextLine();
+
+
+            }   else {
+ 
+                break;
+                
+            }
+        
+        }
+        
+        
         //Nuevo Juego
-        Juego juego = new Juego(numeroJugadores, dineroInicial, 
-        apuestaMinima, limiteApuesta);
+        Juego juego = new Juego(
+        apodoJugador, Integer.parseInt(numeroJugadores),  
+        Integer.parseInt(dineroInicial), Integer.parseInt(apuestaMinima), 
+        Integer.parseInt(limiteApuesta));
         
         //Contador de manos.
         int mano = 1;
@@ -450,7 +659,7 @@ public class Juego{
         //Termino del juego
         if (juego.terminarJuego() == -1){
             
-            System.out.println("\nPerdiste\n");
+            System.out.println("\nHas perdido tu dinero.\n");
             
         } else {
             
