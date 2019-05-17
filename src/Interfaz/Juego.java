@@ -34,10 +34,13 @@ public class Juego extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelTable = new javax.swing.JPanel();
+        jLabelFlop1 = new javax.swing.JLabel();
+        jLabelFlop3 = new javax.swing.JLabel();
+        jLabelTurn = new javax.swing.JLabel();
+        jLabelRiver = new javax.swing.JLabel();
+        jLabelFlop2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaActions = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        jPanelUp = new javax.swing.JPanel();
         jPanelCards = new javax.swing.JPanel();
         jLabelCard1 = new javax.swing.JLabel();
         jLabelCard2 = new javax.swing.JLabel();
@@ -46,42 +49,95 @@ public class Juego extends javax.swing.JFrame {
         jLabelBestCard3 = new javax.swing.JLabel();
         jLabelBestCard4 = new javax.swing.JLabel();
         jLabelBestCard5 = new javax.swing.JLabel();
+        jButtonCheck = new javax.swing.JButton();
         jButtonCall = new javax.swing.JButton();
-        jButtonRaise = new javax.swing.JButton();
-        jButtonCall1 = new javax.swing.JButton();
-        jButtonCall2 = new javax.swing.JButton();
-        jButtonCall3 = new javax.swing.JButton();
-        jButtonCall4 = new javax.swing.JButton();
+        jButtonBet = new javax.swing.JButton();
+        jButtonPause = new javax.swing.JButton();
+        jButtonQuit = new javax.swing.JButton();
+        jButtonFold = new javax.swing.JButton();
         jTextFieldCards = new javax.swing.JTextField();
-        jTextFieldCards1 = new javax.swing.JTextField();
-        jTextFieldCards2 = new javax.swing.JTextField();
-        jTextFieldCards3 = new javax.swing.JTextField();
+        jTextFieldHole = new javax.swing.JTextField();
+        jTextFieldHand = new javax.swing.JTextField();
+        jTextFieldBest = new javax.swing.JTextField();
+        jTextFieldBet = new javax.swing.JTextField();
+        jTextFieldMoneyQ = new javax.swing.JTextField();
+        jTextFieldMoney = new javax.swing.JTextField();
         jPanelDown = new javax.swing.JPanel();
         jPanelLeft = new javax.swing.JPanel();
         jPanelRight = new javax.swing.JPanel();
+        jPanelUp = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Texas Hold'em Poker ");
         setBackground(new java.awt.Color(27, 2, 2));
         setFont(new java.awt.Font("Agency FB", 2, 18)); // NOI18N
         setForeground(new java.awt.Color(153, 153, 0));
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Spades.jpg")).getImage());
+        setMaximumSize(new java.awt.Dimension(800, 530));
+        setMinimumSize(new java.awt.Dimension(800, 530));
+        setPreferredSize(new java.awt.Dimension(800, 530));
         setResizable(false);
+        setSize(new java.awt.Dimension(800, 530));
 
         jPanelTable.setBackground(new java.awt.Color(1, 115, 22));
         jPanelTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(27, 2, 2), 10));
-        jPanelTable.setMaximumSize(new java.awt.Dimension(400, 250));
-        jPanelTable.setMinimumSize(new java.awt.Dimension(400, 250));
+        jPanelTable.setMaximumSize(new java.awt.Dimension(400, 200));
+        jPanelTable.setMinimumSize(new java.awt.Dimension(400, 200));
         jPanelTable.setPreferredSize(new java.awt.Dimension(400, 200));
+
+        jLabelFlop1.setText("Flop1");
+        jLabelFlop1.setMaximumSize(new java.awt.Dimension(26, 36));
+        jLabelFlop1.setMinimumSize(new java.awt.Dimension(26, 36));
+        jLabelFlop1.setPreferredSize(new java.awt.Dimension(26, 36));
+
+        jLabelFlop3.setText("Flop3");
+        jLabelFlop3.setMaximumSize(new java.awt.Dimension(26, 36));
+        jLabelFlop3.setMinimumSize(new java.awt.Dimension(26, 36));
+        jLabelFlop3.setPreferredSize(new java.awt.Dimension(26, 36));
+
+        jLabelTurn.setText("Turn");
+        jLabelTurn.setMaximumSize(new java.awt.Dimension(26, 36));
+        jLabelTurn.setMinimumSize(new java.awt.Dimension(26, 36));
+        jLabelTurn.setPreferredSize(new java.awt.Dimension(26, 36));
+
+        jLabelRiver.setText("River");
+        jLabelRiver.setMaximumSize(new java.awt.Dimension(26, 36));
+        jLabelRiver.setMinimumSize(new java.awt.Dimension(26, 36));
+        jLabelRiver.setPreferredSize(new java.awt.Dimension(26, 36));
+
+        jLabelFlop2.setText("Flop2");
+        jLabelFlop2.setMaximumSize(new java.awt.Dimension(26, 36));
+        jLabelFlop2.setMinimumSize(new java.awt.Dimension(26, 36));
+        jLabelFlop2.setPreferredSize(new java.awt.Dimension(26, 36));
 
         javax.swing.GroupLayout jPanelTableLayout = new javax.swing.GroupLayout(jPanelTable);
         jPanelTable.setLayout(jPanelTableLayout);
         jPanelTableLayout.setHorizontalGroup(
             jPanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(jPanelTableLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jLabelFlop1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabelFlop2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabelFlop3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabelTurn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabelRiver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         jPanelTableLayout.setVerticalGroup(
             jPanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTableLayout.createSequentialGroup()
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addGroup(jPanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelFlop1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelFlop3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTurn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelRiver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelFlop2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
         jTextAreaActions.setBackground(new java.awt.Color(250, 255, 234));
@@ -101,36 +157,9 @@ public class Juego extends javax.swing.JFrame {
         jTextAreaActions.setSelectionColor(new java.awt.Color(27, 2, 2));
         jScrollPane1.setViewportView(jTextAreaActions);
 
-        jPanelUp.setBackground(new java.awt.Color(60, 2, 2));
-        jPanelUp.setPreferredSize(new java.awt.Dimension(600, 100));
-
-        javax.swing.GroupLayout jPanelUpLayout = new javax.swing.GroupLayout(jPanelUp);
-        jPanelUp.setLayout(jPanelUpLayout);
-        jPanelUpLayout.setHorizontalGroup(
-            jPanelUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanelUpLayout.setVerticalGroup(
-            jPanelUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanelUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanelUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         jPanelCards.setBackground(new java.awt.Color(250, 255, 234));
+        jPanelCards.setMaximumSize(new java.awt.Dimension(800, 100));
+        jPanelCards.setMinimumSize(new java.awt.Dimension(800, 100));
         jPanelCards.setPreferredSize(new java.awt.Dimension(800, 100));
 
         jLabelCard1.setBackground(new java.awt.Color(250, 255, 234));
@@ -146,124 +175,134 @@ public class Juego extends javax.swing.JFrame {
         jLabelCard2.setPreferredSize(new java.awt.Dimension(50, 72));
 
         jLabelBestCard1.setBackground(new java.awt.Color(250, 255, 234));
-        jLabelBestCard1.setText("jLabel3");
+        jLabelBestCard1.setText("Mano1");
         jLabelBestCard1.setMaximumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard1.setMinimumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard1.setPreferredSize(new java.awt.Dimension(50, 72));
 
         jLabelBestCard2.setBackground(new java.awt.Color(250, 255, 234));
-        jLabelBestCard2.setText("jLabel4");
+        jLabelBestCard2.setText("Mano2");
         jLabelBestCard2.setMaximumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard2.setMinimumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard2.setPreferredSize(new java.awt.Dimension(50, 72));
 
         jLabelBestCard3.setBackground(new java.awt.Color(250, 255, 234));
-        jLabelBestCard3.setText("jLabel5");
+        jLabelBestCard3.setText("Mano3");
         jLabelBestCard3.setMaximumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard3.setMinimumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard3.setPreferredSize(new java.awt.Dimension(50, 72));
 
         jLabelBestCard4.setBackground(new java.awt.Color(250, 255, 234));
-        jLabelBestCard4.setText("jLabel6");
+        jLabelBestCard4.setText("Mano4");
         jLabelBestCard4.setMaximumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard4.setMinimumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard4.setPreferredSize(new java.awt.Dimension(50, 72));
 
         jLabelBestCard5.setBackground(new java.awt.Color(250, 255, 234));
-        jLabelBestCard5.setText("jLabel7");
+        jLabelBestCard5.setText("Mano5");
         jLabelBestCard5.setMaximumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard5.setMinimumSize(new java.awt.Dimension(50, 72));
         jLabelBestCard5.setPreferredSize(new java.awt.Dimension(50, 72));
 
+        jButtonCheck.setBackground(new java.awt.Color(250, 255, 234));
+        jButtonCheck.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jButtonCheck.setForeground(new java.awt.Color(255, 53, 53));
+        jButtonCheck.setText("Check");
+        jButtonCheck.setBorderPainted(false);
+        jButtonCheck.setContentAreaFilled(false);
+        jButtonCheck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCheck.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCheck.setMaximumSize(new java.awt.Dimension(80, 24));
+        jButtonCheck.setMinimumSize(new java.awt.Dimension(80, 24));
+        jButtonCheck.setPreferredSize(new java.awt.Dimension(80, 20));
+        jButtonCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCheckActionPerformed(evt);
+            }
+        });
+
         jButtonCall.setBackground(new java.awt.Color(250, 255, 234));
         jButtonCall.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
         jButtonCall.setForeground(new java.awt.Color(255, 53, 53));
-        jButtonCall.setText("Check");
+        jButtonCall.setText("Call");
         jButtonCall.setBorderPainted(false);
         jButtonCall.setContentAreaFilled(false);
         jButtonCall.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCall.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonCall.setMaximumSize(new java.awt.Dimension(80, 24));
         jButtonCall.setMinimumSize(new java.awt.Dimension(80, 24));
-        jButtonCall.setPreferredSize(new java.awt.Dimension(80, 24));
-
-        jButtonRaise.setBackground(new java.awt.Color(250, 255, 234));
-        jButtonRaise.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jButtonRaise.setForeground(new java.awt.Color(255, 53, 53));
-        jButtonRaise.setText("Fold");
-        jButtonRaise.setBorderPainted(false);
-        jButtonRaise.setContentAreaFilled(false);
-        jButtonRaise.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonRaise.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonRaise.setMaximumSize(new java.awt.Dimension(80, 24));
-        jButtonRaise.setMinimumSize(new java.awt.Dimension(80, 24));
-        jButtonRaise.setPreferredSize(new java.awt.Dimension(80, 24));
-        jButtonRaise.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCall.setPreferredSize(new java.awt.Dimension(72, 20));
+        jButtonCall.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRaiseActionPerformed(evt);
+                jButtonCallActionPerformed(evt);
             }
         });
 
-        jButtonCall1.setBackground(new java.awt.Color(250, 255, 234));
-        jButtonCall1.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jButtonCall1.setForeground(new java.awt.Color(255, 53, 53));
-        jButtonCall1.setText("Bet");
-        jButtonCall1.setBorderPainted(false);
-        jButtonCall1.setContentAreaFilled(false);
-        jButtonCall1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCall1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonCall1.setMaximumSize(new java.awt.Dimension(80, 24));
-        jButtonCall1.setMinimumSize(new java.awt.Dimension(80, 24));
-        jButtonCall1.setPreferredSize(new java.awt.Dimension(80, 24));
-        jButtonCall1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBet.setBackground(new java.awt.Color(250, 255, 234));
+        jButtonBet.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jButtonBet.setForeground(new java.awt.Color(255, 53, 53));
+        jButtonBet.setText("Bet");
+        jButtonBet.setBorderPainted(false);
+        jButtonBet.setContentAreaFilled(false);
+        jButtonBet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBet.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonBet.setMaximumSize(new java.awt.Dimension(80, 24));
+        jButtonBet.setMinimumSize(new java.awt.Dimension(72, 20));
+        jButtonBet.setPreferredSize(new java.awt.Dimension(72, 20));
+        jButtonBet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCall1ActionPerformed(evt);
+                jButtonBetActionPerformed(evt);
             }
         });
 
-        jButtonCall2.setBackground(new java.awt.Color(250, 255, 234));
-        jButtonCall2.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jButtonCall2.setForeground(new java.awt.Color(255, 53, 53));
-        jButtonCall2.setText("Raise");
-        jButtonCall2.setBorderPainted(false);
-        jButtonCall2.setContentAreaFilled(false);
-        jButtonCall2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCall2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonCall2.setMaximumSize(new java.awt.Dimension(80, 24));
-        jButtonCall2.setMinimumSize(new java.awt.Dimension(80, 24));
-        jButtonCall2.setPreferredSize(new java.awt.Dimension(80, 24));
-
-        jButtonCall3.setBackground(new java.awt.Color(250, 255, 234));
-        jButtonCall3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jButtonCall3.setForeground(new java.awt.Color(255, 53, 53));
-        jButtonCall3.setText("Quit");
-        jButtonCall3.setBorderPainted(false);
-        jButtonCall3.setContentAreaFilled(false);
-        jButtonCall3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCall3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonCall3.setMaximumSize(new java.awt.Dimension(80, 24));
-        jButtonCall3.setMinimumSize(new java.awt.Dimension(80, 24));
-        jButtonCall3.setPreferredSize(new java.awt.Dimension(80, 24));
-        jButtonCall3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonPause.setBackground(new java.awt.Color(250, 255, 234));
+        jButtonPause.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jButtonPause.setForeground(new java.awt.Color(255, 53, 53));
+        jButtonPause.setText("Pause");
+        jButtonPause.setBorderPainted(false);
+        jButtonPause.setContentAreaFilled(false);
+        jButtonPause.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonPause.setMaximumSize(new java.awt.Dimension(80, 24));
+        jButtonPause.setMinimumSize(new java.awt.Dimension(80, 24));
+        jButtonPause.setPreferredSize(new java.awt.Dimension(72, 20));
+        jButtonPause.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCall3ActionPerformed(evt);
+                jButtonPauseActionPerformed(evt);
             }
         });
 
-        jButtonCall4.setBackground(new java.awt.Color(250, 255, 234));
-        jButtonCall4.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jButtonCall4.setForeground(new java.awt.Color(255, 53, 53));
-        jButtonCall4.setText("Pause");
-        jButtonCall4.setBorderPainted(false);
-        jButtonCall4.setContentAreaFilled(false);
-        jButtonCall4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonCall4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonCall4.setMaximumSize(new java.awt.Dimension(80, 24));
-        jButtonCall4.setMinimumSize(new java.awt.Dimension(80, 24));
-        jButtonCall4.setPreferredSize(new java.awt.Dimension(80, 24));
-        jButtonCall4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonQuit.setBackground(new java.awt.Color(250, 255, 234));
+        jButtonQuit.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jButtonQuit.setForeground(new java.awt.Color(255, 53, 53));
+        jButtonQuit.setText("Quit");
+        jButtonQuit.setBorderPainted(false);
+        jButtonQuit.setContentAreaFilled(false);
+        jButtonQuit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonQuit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonQuit.setMaximumSize(new java.awt.Dimension(72, 20));
+        jButtonQuit.setMinimumSize(new java.awt.Dimension(72, 20));
+        jButtonQuit.setPreferredSize(new java.awt.Dimension(72, 20));
+        jButtonQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCall4ActionPerformed(evt);
+                jButtonQuitActionPerformed(evt);
+            }
+        });
+
+        jButtonFold.setBackground(new java.awt.Color(250, 255, 234));
+        jButtonFold.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jButtonFold.setForeground(new java.awt.Color(255, 53, 53));
+        jButtonFold.setText("Fold");
+        jButtonFold.setBorderPainted(false);
+        jButtonFold.setContentAreaFilled(false);
+        jButtonFold.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonFold.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonFold.setMaximumSize(new java.awt.Dimension(80, 24));
+        jButtonFold.setMinimumSize(new java.awt.Dimension(80, 24));
+        jButtonFold.setPreferredSize(new java.awt.Dimension(72, 20));
+        jButtonFold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFoldActionPerformed(evt);
             }
         });
 
@@ -279,41 +318,86 @@ public class Juego extends javax.swing.JFrame {
         jTextFieldCards.setMinimumSize(new java.awt.Dimension(40, 20));
         jTextFieldCards.setPreferredSize(new java.awt.Dimension(40, 20));
 
-        jTextFieldCards1.setEditable(false);
-        jTextFieldCards1.setBackground(new java.awt.Color(250, 255, 234));
-        jTextFieldCards1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jTextFieldCards1.setForeground(new java.awt.Color(255, 53, 53));
-        jTextFieldCards1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldCards1.setText("Hole");
-        jTextFieldCards1.setBorder(null);
-        jTextFieldCards1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jTextFieldCards1.setMaximumSize(new java.awt.Dimension(40, 20));
-        jTextFieldCards1.setMinimumSize(new java.awt.Dimension(40, 20));
-        jTextFieldCards1.setPreferredSize(new java.awt.Dimension(40, 20));
+        jTextFieldHole.setEditable(false);
+        jTextFieldHole.setBackground(new java.awt.Color(250, 255, 234));
+        jTextFieldHole.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTextFieldHole.setForeground(new java.awt.Color(255, 53, 53));
+        jTextFieldHole.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldHole.setText("Hole");
+        jTextFieldHole.setBorder(null);
+        jTextFieldHole.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jTextFieldHole.setMaximumSize(new java.awt.Dimension(40, 20));
+        jTextFieldHole.setMinimumSize(new java.awt.Dimension(40, 20));
+        jTextFieldHole.setPreferredSize(new java.awt.Dimension(40, 20));
 
-        jTextFieldCards2.setEditable(false);
-        jTextFieldCards2.setBackground(new java.awt.Color(250, 255, 234));
-        jTextFieldCards2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jTextFieldCards2.setForeground(new java.awt.Color(255, 53, 53));
-        jTextFieldCards2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldCards2.setText("hand");
-        jTextFieldCards2.setBorder(null);
-        jTextFieldCards2.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jTextFieldCards2.setMaximumSize(new java.awt.Dimension(40, 20));
-        jTextFieldCards2.setMinimumSize(new java.awt.Dimension(40, 20));
-        jTextFieldCards2.setPreferredSize(new java.awt.Dimension(40, 20));
+        jTextFieldHand.setEditable(false);
+        jTextFieldHand.setBackground(new java.awt.Color(250, 255, 234));
+        jTextFieldHand.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTextFieldHand.setForeground(new java.awt.Color(255, 53, 53));
+        jTextFieldHand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldHand.setText("hand");
+        jTextFieldHand.setBorder(null);
+        jTextFieldHand.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jTextFieldHand.setMaximumSize(new java.awt.Dimension(40, 20));
+        jTextFieldHand.setMinimumSize(new java.awt.Dimension(40, 20));
+        jTextFieldHand.setPreferredSize(new java.awt.Dimension(40, 20));
 
-        jTextFieldCards3.setEditable(false);
-        jTextFieldCards3.setBackground(new java.awt.Color(250, 255, 234));
-        jTextFieldCards3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jTextFieldCards3.setForeground(new java.awt.Color(255, 53, 53));
-        jTextFieldCards3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldCards3.setText("Best");
-        jTextFieldCards3.setBorder(null);
-        jTextFieldCards3.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jTextFieldCards3.setMaximumSize(new java.awt.Dimension(40, 20));
-        jTextFieldCards3.setMinimumSize(new java.awt.Dimension(40, 20));
-        jTextFieldCards3.setPreferredSize(new java.awt.Dimension(40, 20));
+        jTextFieldBest.setEditable(false);
+        jTextFieldBest.setBackground(new java.awt.Color(250, 255, 234));
+        jTextFieldBest.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTextFieldBest.setForeground(new java.awt.Color(255, 53, 53));
+        jTextFieldBest.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldBest.setText("Best");
+        jTextFieldBest.setBorder(null);
+        jTextFieldBest.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jTextFieldBest.setMaximumSize(new java.awt.Dimension(40, 20));
+        jTextFieldBest.setMinimumSize(new java.awt.Dimension(40, 20));
+        jTextFieldBest.setPreferredSize(new java.awt.Dimension(40, 20));
+
+        jTextFieldBet.setBackground(new java.awt.Color(250, 255, 234));
+        jTextFieldBet.setFont(new java.awt.Font("Trebuchet MS", 3, 10)); // NOI18N
+        jTextFieldBet.setForeground(new java.awt.Color(255, 53, 53));
+        jTextFieldBet.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldBet.setText("100");
+        jTextFieldBet.setBorder(null);
+        jTextFieldBet.setMaximumSize(new java.awt.Dimension(80, 20));
+        jTextFieldBet.setMinimumSize(new java.awt.Dimension(80, 20));
+        jTextFieldBet.setPreferredSize(new java.awt.Dimension(80, 20));
+        jTextFieldBet.setSelectedTextColor(new java.awt.Color(250, 255, 234));
+        jTextFieldBet.setSelectionColor(new java.awt.Color(255, 53, 53));
+        jTextFieldBet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBetActionPerformed(evt);
+            }
+        });
+
+        jTextFieldMoneyQ.setBackground(new java.awt.Color(250, 255, 234));
+        jTextFieldMoneyQ.setFont(new java.awt.Font("Trebuchet MS", 3, 10)); // NOI18N
+        jTextFieldMoneyQ.setForeground(new java.awt.Color(255, 53, 53));
+        jTextFieldMoneyQ.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldMoneyQ.setText("100");
+        jTextFieldMoneyQ.setBorder(null);
+        jTextFieldMoneyQ.setMaximumSize(new java.awt.Dimension(80, 20));
+        jTextFieldMoneyQ.setMinimumSize(new java.awt.Dimension(80, 20));
+        jTextFieldMoneyQ.setPreferredSize(new java.awt.Dimension(80, 20));
+        jTextFieldMoneyQ.setSelectedTextColor(new java.awt.Color(250, 255, 234));
+        jTextFieldMoneyQ.setSelectionColor(new java.awt.Color(255, 53, 53));
+        jTextFieldMoneyQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldMoneyQActionPerformed(evt);
+            }
+        });
+
+        jTextFieldMoney.setEditable(false);
+        jTextFieldMoney.setBackground(new java.awt.Color(250, 255, 234));
+        jTextFieldMoney.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jTextFieldMoney.setForeground(new java.awt.Color(255, 53, 53));
+        jTextFieldMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldMoney.setText("Money");
+        jTextFieldMoney.setBorder(null);
+        jTextFieldMoney.setPreferredSize(new java.awt.Dimension(72, 20));
+        jTextFieldMoney.setSelectedTextColor(new java.awt.Color(250, 255, 234));
+        jTextFieldMoney.setSelectionColor(new java.awt.Color(255, 53, 53));
 
         javax.swing.GroupLayout jPanelCardsLayout = new javax.swing.GroupLayout(jPanelCards);
         jPanelCards.setLayout(jPanelCardsLayout);
@@ -323,16 +407,16 @@ public class Juego extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldCards, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCards1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldHole, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jLabelCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabelCard2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextFieldCards3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCards2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jTextFieldBest, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldHand, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addComponent(jLabelBestCard1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabelBestCard2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -342,46 +426,41 @@ public class Juego extends javax.swing.JFrame {
                 .addComponent(jLabelBestCard4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabelBestCard5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(15, 15, 15)
+                .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCardsLayout.createSequentialGroup()
+                        .addComponent(jButtonCall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(jButtonBet, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelCardsLayout.createSequentialGroup()
+                        .addComponent(jButtonCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(jTextFieldMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelCardsLayout.createSequentialGroup()
+                        .addComponent(jButtonFold, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonPause, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelCardsLayout.createSequentialGroup()
-                        .addComponent(jButtonCall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonRaise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)
+                        .addComponent(jButtonQuit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCardsLayout.createSequentialGroup()
-                        .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonCall4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCall1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonCall3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCall2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(15, 15, 15))
+                        .addGap(3, 3, 3)
+                        .addComponent(jTextFieldBet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelCardsLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jTextFieldMoneyQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelCardsLayout.setVerticalGroup(
             jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCardsLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonRaise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCall1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCall2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonCall4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCardsLayout.createSequentialGroup()
-                        .addComponent(jButtonCall3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8))))
             .addGroup(jPanelCardsLayout.createSequentialGroup()
                 .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelCardsLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jTextFieldCards3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldBest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextFieldCards2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextFieldHand, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCardsLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -394,14 +473,32 @@ public class Juego extends javax.swing.JFrame {
                             .addComponent(jLabelCard1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelCardsLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jTextFieldCards1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldHole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextFieldCards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 14, Short.MAX_VALUE))
+                        .addComponent(jTextFieldCards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCardsLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldMoneyQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonCall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonBet, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldBet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanelCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonQuit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonFold, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonPause, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(44, 44, 44))
         );
 
         jPanelDown.setBackground(new java.awt.Color(60, 2, 2));
-        jPanelDown.setPreferredSize(new java.awt.Dimension(600, 50));
+        jPanelDown.setMaximumSize(new java.awt.Dimension(600, 100));
+        jPanelDown.setMinimumSize(new java.awt.Dimension(600, 100));
+        jPanelDown.setPreferredSize(new java.awt.Dimension(600, 100));
 
         javax.swing.GroupLayout jPanelDownLayout = new javax.swing.GroupLayout(jPanelDown);
         jPanelDown.setLayout(jPanelDownLayout);
@@ -415,7 +512,9 @@ public class Juego extends javax.swing.JFrame {
         );
 
         jPanelLeft.setBackground(new java.awt.Color(60, 2, 2));
-        jPanelLeft.setPreferredSize(new java.awt.Dimension(100, 250));
+        jPanelLeft.setMaximumSize(new java.awt.Dimension(100, 200));
+        jPanelLeft.setMinimumSize(new java.awt.Dimension(100, 200));
+        jPanelLeft.setPreferredSize(new java.awt.Dimension(100, 200));
 
         javax.swing.GroupLayout jPanelLeftLayout = new javax.swing.GroupLayout(jPanelLeft);
         jPanelLeft.setLayout(jPanelLeftLayout);
@@ -429,17 +528,34 @@ public class Juego extends javax.swing.JFrame {
         );
 
         jPanelRight.setBackground(new java.awt.Color(60, 2, 2));
-        jPanelRight.setPreferredSize(new java.awt.Dimension(100, 250));
+        jPanelRight.setMaximumSize(new java.awt.Dimension(100, 200));
+        jPanelRight.setMinimumSize(new java.awt.Dimension(100, 200));
+        jPanelRight.setPreferredSize(new java.awt.Dimension(100, 200));
 
         javax.swing.GroupLayout jPanelRightLayout = new javax.swing.GroupLayout(jPanelRight);
         jPanelRight.setLayout(jPanelRightLayout);
         jPanelRightLayout.setHorizontalGroup(
             jPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
         jPanelRightLayout.setVerticalGroup(
             jPanelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+
+        jPanelUp.setBackground(new java.awt.Color(60, 2, 2));
+        jPanelUp.setMaximumSize(new java.awt.Dimension(600, 100));
+        jPanelUp.setMinimumSize(new java.awt.Dimension(600, 100));
+
+        javax.swing.GroupLayout jPanelUpLayout = new javax.swing.GroupLayout(jPanelUp);
+        jPanelUp.setLayout(jPanelUpLayout);
+        jPanelUpLayout.setHorizontalGroup(
+            jPanelUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        jPanelUpLayout.setVerticalGroup(
+            jPanelUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -447,56 +563,77 @@ public class Juego extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jPanelLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(jPanelTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(jPanelRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(jPanelDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jPanelCards, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanelCards, javax.swing.GroupLayout.PREFERRED_SIZE, 799, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanelLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(jPanelTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(jPanelRight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanelDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanelUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, 0)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                        .addComponent(jPanelUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanelLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanelTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanelRight, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanelDown, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanelLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, 0)
+                                        .addComponent(jPanelRight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, 0)))
+                        .addComponent(jPanelDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0)
-                .addComponent(jPanelCards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelCards, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonRaiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRaiseActionPerformed
+    private void jButtonCallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCallActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRaiseActionPerformed
+    }//GEN-LAST:event_jButtonCallActionPerformed
 
-    private void jButtonCall1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCall1ActionPerformed
+    private void jButtonBetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCall1ActionPerformed
+    }//GEN-LAST:event_jButtonBetActionPerformed
 
-    private void jButtonCall3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCall3ActionPerformed
+    private void jButtonQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCall3ActionPerformed
+    }//GEN-LAST:event_jButtonQuitActionPerformed
 
-    private void jButtonCall4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCall4ActionPerformed
+    private void jButtonFoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFoldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCall4ActionPerformed
+    }//GEN-LAST:event_jButtonFoldActionPerformed
+
+    private void jButtonCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCheckActionPerformed
+
+    private void jButtonPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPauseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPauseActionPerformed
+
+    private void jTextFieldMoneyQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMoneyQActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldMoneyQActionPerformed
+
+    private void jTextFieldBetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,12 +671,12 @@ public class Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonBet;
     private javax.swing.JButton jButtonCall;
-    private javax.swing.JButton jButtonCall1;
-    private javax.swing.JButton jButtonCall2;
-    private javax.swing.JButton jButtonCall3;
-    private javax.swing.JButton jButtonCall4;
-    private javax.swing.JButton jButtonRaise;
+    private javax.swing.JButton jButtonCheck;
+    private javax.swing.JButton jButtonFold;
+    private javax.swing.JButton jButtonPause;
+    private javax.swing.JButton jButtonQuit;
     private javax.swing.JLabel jLabelBestCard1;
     private javax.swing.JLabel jLabelBestCard2;
     private javax.swing.JLabel jLabelBestCard3;
@@ -547,7 +684,11 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBestCard5;
     private javax.swing.JLabel jLabelCard1;
     private javax.swing.JLabel jLabelCard2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabelFlop1;
+    private javax.swing.JLabel jLabelFlop2;
+    private javax.swing.JLabel jLabelFlop3;
+    private javax.swing.JLabel jLabelRiver;
+    private javax.swing.JLabel jLabelTurn;
     private javax.swing.JPanel jPanelCards;
     private javax.swing.JPanel jPanelDown;
     private javax.swing.JPanel jPanelLeft;
@@ -556,9 +697,12 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelUp;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaActions;
+    private javax.swing.JTextField jTextFieldBest;
+    private javax.swing.JTextField jTextFieldBet;
     private javax.swing.JTextField jTextFieldCards;
-    private javax.swing.JTextField jTextFieldCards1;
-    private javax.swing.JTextField jTextFieldCards2;
-    private javax.swing.JTextField jTextFieldCards3;
+    private javax.swing.JTextField jTextFieldHand;
+    private javax.swing.JTextField jTextFieldHole;
+    private javax.swing.JTextField jTextFieldMoney;
+    private javax.swing.JTextField jTextFieldMoneyQ;
     // End of variables declaration//GEN-END:variables
 }
