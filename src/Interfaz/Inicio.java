@@ -183,7 +183,7 @@ public class Inicio extends javax.swing.JFrame {
         jPasswordField1.setDisabledTextColor(new java.awt.Color(255, 51, 51));
         jPasswordField1.setOpaque(false);
         jPasswordField1.setPreferredSize(new java.awt.Dimension(91, 24));
-        jPasswordField1.setSelectedTextColor(new java.awt.Color(255, 51, 51));
+        jPasswordField1.setSelectedTextColor(new java.awt.Color(27, 2, 2));
         jPasswordField1.setSelectionColor(new java.awt.Color(255, 51, 51));
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +199,8 @@ public class Inicio extends javax.swing.JFrame {
         jTextFieldTexas.setText("Texas Hold'em");
         jTextFieldTexas.setBorder(null);
         jTextFieldTexas.setOpaque(false);
+        jTextFieldTexas.setSelectedTextColor(new java.awt.Color(27, 2, 2));
+        jTextFieldTexas.setSelectionColor(new java.awt.Color(255, 51, 51));
         jTextFieldTexas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTexasActionPerformed(evt);
@@ -213,6 +215,8 @@ public class Inicio extends javax.swing.JFrame {
         jTextFieldPoker.setText("Poker Game");
         jTextFieldPoker.setBorder(null);
         jTextFieldPoker.setOpaque(false);
+        jTextFieldPoker.setSelectedTextColor(new java.awt.Color(27, 2, 2));
+        jTextFieldPoker.setSelectionColor(new java.awt.Color(255, 51, 51));
         jTextFieldPoker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPokerActionPerformed(evt);
@@ -227,6 +231,8 @@ public class Inicio extends javax.swing.JFrame {
         jTextFieldLogin.setText("Login");
         jTextFieldLogin.setBorder(null);
         jTextFieldLogin.setPreferredSize(new java.awt.Dimension(91, 24));
+        jTextFieldLogin.setSelectedTextColor(new java.awt.Color(27, 2, 2));
+        jTextFieldLogin.setSelectionColor(new java.awt.Color(255, 51, 51));
         jTextFieldLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldLoginActionPerformed(evt);
@@ -268,8 +274,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jButtonPlay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButtonInfo.getAccessibleContext().setAccessibleName("JButtonInfo");
-        jButtonInfo.getAccessibleContext().setAccessibleDescription("JButtonInfo");
+        jButtonInfo.getAccessibleContext().setAccessibleName("");
 
         jPanelLeft.setBackground(new java.awt.Color(27, 2, 2));
 
@@ -318,9 +323,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JLabelCrupier, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanelRight, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanelRight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addComponent(jPanelBottom, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
         );
@@ -425,20 +428,20 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog JDialogInfo;
-    private javax.swing.JLabel JLabelCrupier;
-    private javax.swing.JButton jButtonInfo;
-    private javax.swing.JButton jButtonPlay;
-    private javax.swing.JButton jButtonRules;
-    private javax.swing.JPanel jPanelBottom;
-    private javax.swing.JPanel jPanelLeft;
-    private javax.swing.JPanel jPanelRight;
-    private javax.swing.JPanel jPanelUp;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextFieldLogin;
-    private javax.swing.JTextField jTextFieldPoker;
-    private javax.swing.JTextField jTextFieldTexas;
+    public javax.swing.JDialog JDialogInfo;
+    public javax.swing.JLabel JLabelCrupier;
+    public javax.swing.JButton jButtonInfo;
+    public javax.swing.JButton jButtonPlay;
+    public javax.swing.JButton jButtonRules;
+    public javax.swing.JPanel jPanelBottom;
+    public javax.swing.JPanel jPanelLeft;
+    public javax.swing.JPanel jPanelRight;
+    public javax.swing.JPanel jPanelUp;
+    public javax.swing.JPasswordField jPasswordField1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextField jTextFieldLogin;
+    public javax.swing.JTextField jTextFieldPoker;
+    public javax.swing.JTextField jTextFieldTexas;
     // End of variables declaration//GEN-END:variables
 }
